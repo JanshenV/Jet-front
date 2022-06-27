@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Produto } from 'src/app/Produtos';
 
 @Component({
   selector: 'app-table-item',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table-item.component.css']
 })
 export class TableItemComponent implements OnInit {
+  @Input() produto!: Produto;
 
   constructor() { }
 

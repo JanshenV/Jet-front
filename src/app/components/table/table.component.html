@@ -1,1 +1,9 @@
-<p>table works!</p>
+<div class="tableContainer">
+    <div *ngFor="let produto of produtos">
+        <app-table-item 
+        [produto]="produto"
+        >
+
+        </app-table-item>
+    </div>
+</div>
