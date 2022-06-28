@@ -3,7 +3,8 @@
     class="table-item"
     (click)="handleShowModal()"
 >
-    <img 
+    <img
+        class="mainImg"
         src={{produto.imagem}}
         alt="imagem do produto"
     >
@@ -17,9 +18,26 @@
         </span>
     </div>
 
-    <span>{{produto.preco}}</span>
-    <span>{{produto.estoque}}</span>
-    <span>{{produto.status}}</span>
+    <span>
+        Preço: R$ {{produto.preco}}
+    </span>
+    <span>
+        Estoque: {{produto.estoque}}
+    </span>
+    
+    <img
+        class="eye"
+        *ngIf="produto.status"
+        src="../../../assets/visible-eye-svgrepo-com.svg"
+        alt="visible"
+    >
+
+     <img 
+        class="eye"
+        *ngIf="!produto.status"
+        src="../../../assets//invisible-svgrepo-com.svg"
+        alt="visible"
+    >
 
 </div>
 

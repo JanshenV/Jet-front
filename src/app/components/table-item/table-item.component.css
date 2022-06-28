@@ -7,13 +7,18 @@
     position: relative;
 }
 
-.table-item img {
+.mainImg {
     width: 120px;
     height: 120px;
 }
 
 .table-item span {
     font-weight: 600;
+}
+
+.eye {
+    width: 20px;
+    height: 20px;
 }
 
 .nameAndDescription {

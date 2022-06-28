@@ -23,6 +23,5 @@ export class TableComponent implements OnInit {
 
   getProdutos(): void {
     this.apiService.getAll().subscribe((produtos) => (this.produtos = produtos));
-
   }
 }
