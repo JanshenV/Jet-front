@@ -39,8 +39,13 @@
         alt="visible"
     >
 
+    <button
+        class="removeProduto"
+        (click)="$event.stopPropagation()"
+        (click)="handleDelete(produto.id)">
+        Remover Produto
+    </button>
 </div>
-
 <div 
     *ngIf="showModal"
     class="modalContainer">

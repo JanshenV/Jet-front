@@ -21,4 +21,8 @@ export class ApiService {
   getAll(): Observable<Produto[]> {
     return this.http.get<Produto[]>(`${this.apiUrl}produtos`)
   }
+
+  deleteOne(id: number) {
+    return this.http.delete<Produto>(`${this.apiUrl}produtos/${id}`);
+  }
 };
