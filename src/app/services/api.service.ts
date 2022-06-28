@@ -29,6 +29,6 @@ export class ApiService {
   }
 
   deleteOne(id: number) {
-    return this.http.delete<Produto>(`${this.apiUrl}produtos/${id}`);
+    return this.http.delete<Produto>(`${this.baseApiUrl}produtos/${id}`);
   }
 };
