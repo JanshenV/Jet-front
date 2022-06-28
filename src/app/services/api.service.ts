@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { Produto } from '../Produtos';
 
+import { environment } from 'src/environments/environment';
+
 import {
   HttpClient, HttpHeaders
 } from '@angular/common/http';
@@ -14,11 +16,15 @@ import { Observable } from 'rxjs';
 
 
 export class ApiService {
-  private apiUrl = 'http://localhost:2700/'
+  private baseApiUrl = environment.baseApiUrl;
 
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Produto[]> {
-    return this.http.get<Produto[]>(`${this.apiUrl}produtos`)
+    return this.http.get<Produto[]>(`${this.baseApiUrl}produtos`)
+  }
+
+  createProduto(formData: FormData): Observable<FormData> {
+    return this.http.post<FormData>(`${this.baseApiUrl}produtos`, formData);
   }
 };
