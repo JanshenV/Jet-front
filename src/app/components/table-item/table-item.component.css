@@ -1,0 +1,48 @@
+.table-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    border-bottom: 2px solid black;
+    position: relative;
+}
+
+.table-item span {
+    font-weight: 600;
+}
+
+.nameAndDescription {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.nameAndDescription span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table-item:hover {
+    background: rgb(219, 211, 211);
+    cursor: pointer;
+}
+
+.description {
+    font-weight: 600;
+    color: rgb(112, 120, 128);
+}
+
+.options {
+    font-size: larger;
+    transition: ease;
+    width: 2%;
+    position: relative;
+}
+
+.options:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(96, 145, 145);
+    border-radius: 20px;
+}
