@@ -93,3 +93,7 @@
     width: 220px;
     height: 220px;
 }
+
+.removeProduto {
+    cursor: pointer;
+}

@@ -27,4 +27,8 @@ export class ApiService {
   createProduto(formData: FormData): Observable<FormData> {
     return this.http.post<FormData>(`${this.baseApiUrl}produtos`, formData);
   }
+
+  deleteOne(id: number) {
+    return this.http.delete<Produto>(`${this.apiUrl}produtos/${id}`);
+  }
 };
