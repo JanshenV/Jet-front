@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+
 import { Produto } from 'src/app/Produtos';
 
 @Component({
@@ -10,9 +11,16 @@ import { Produto } from 'src/app/Produtos';
 export class TableItemComponent implements OnInit {
   @Input() produto!: Produto;
 
+  showModal = false;
+
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  handleShowModal(): void {
+    this.showModal = !this.showModal;
   }
 
 }

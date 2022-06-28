@@ -7,6 +7,11 @@
     position: relative;
 }
 
+.table-item img {
+    width: 120px;
+    height: 120px;
+}
+
 .table-item span {
     font-weight: 600;
 }
@@ -30,19 +35,56 @@
 .description {
     font-weight: 600;
     color: rgb(112, 120, 128);
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.options {
-    font-size: larger;
-    transition: ease;
-    width: 2%;
-    position: relative;
-}
-
-.options:hover {
+.modalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(96, 145, 145);
-    border-radius: 20px;
+    z-index: 50;
+}
+
+.modalInnerContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+    background: white;
+}
+
+.closeButton {
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.produtoInfo {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.produtoInfo span {
+    font-size: larger;
+}
+
+.modalDescription {
+    display: flex;
+    overflow-x: auto;
+    width: 150%;
+}
+
+.produtoInfo {
+    width: 220px;
+    height: 220px;
 }
