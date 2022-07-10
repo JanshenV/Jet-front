@@ -11,46 +11,23 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-
   produtos: Produto[] = [];
-
   addModalUp: boolean = false;
-
-  produtoForm!: FormGroup;
 
   constructor(private apiService: ApiService) {
     this.getProdutos();
   }
 
   ngOnInit(): void {
-    this.produtoForm = new FormGroup({
-      imagem: new FormControl(''),
-      nome: new FormControl('', [Validators.required]),
-      descricao: new FormControl('', [Validators.required]),
-      estoque: new FormControl(''),
-      preco: new FormControl(''),
-      status: new FormControl(false),
-    });
   }
 
-  get nome() {
-    return this.produtoForm.get('nome');
-  };
-
-  get descricao() {
-    return this.produtoForm.get('descricao');
-  };
-
+  //Functions
   handleModalUp() {
-    this.addModalUp = !this.addModalUp;
+    this.addModalUp = true;
   }
 
-  async handleSubmit() {
-    if (this.produtoForm.invalid) {
-      return;
-    };
-    await this.apiService.createProduto(this.produtoForm.value).subscribe();
-    this.handleModalUp();
+  onCloseModal() {
+    this.addModalUp = false;
   }
 
   getProdutos(): void {

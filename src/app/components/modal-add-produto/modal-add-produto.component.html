@@ -1,0 +1,45 @@
+<div class="addProdutoContainer">
+  <div class="addProdutoInnerContainer">
+    <form
+      (ngSubmit)="handleSubmit()"
+      [formGroup]="produtoForm"
+      #formDir="ngForm"
+      ng-submit="$event.preventDefault()"
+    >
+      <div class="formItems">
+        <label>Url da Imagem</label>
+        <input type="url" formControlName="imagem" />
+      </div>
+
+      <div class="formItems">
+        <label>Nome</label>
+        <input type="text" formControlName="nome" required />
+      </div>
+
+      <div class="formItems">
+        <label>Descrição</label>
+        <input type="text" formControlName="descricao" required />
+      </div>
+
+      <div class="formItems">
+        <label>Estoque</label>
+        <input type="number" formControlName="estoque" />
+      </div>
+
+      <div class="formItems">
+        <label>Preço</label>
+        <input type="number" formControlName="preco" />
+      </div>
+
+      <div class="statusItem">
+        <label>Status</label>
+        <input type="checkbox" formControlName="status" />
+      </div>
+
+      <button type="submit" class="confirmFormButton">Confirmar</button>
+    </form>
+    <button class="cancelFormButton" (click)="handleCloseModal()">
+      Cancelar
+    </button>
+  </div>
+</div>

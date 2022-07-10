@@ -11,6 +11,7 @@
     >
     </app-table-item>
   </div>
+
   <ng-template #noProdutos>
     <div
       [ngStyle]="{
@@ -23,48 +24,7 @@
       <h1>Não há produtos há serem exibidos.</h1>
     </div>
   </ng-template>
-</div>
 
-<div class="addProdutoContainer" *ngIf="addModalUp">
-  <div class="addProdutoInnerContainer">
-    <form
-      (ngSubmit)="handleSubmit()"
-      [formGroup]="produtoForm"
-      #formDir="ngForm"
-      ng-submit="$event.preventDefault()"
-    >
-      <div class="formItems">
-        <label>Url da Imagem</label>
-        <input type="url" formControlName="imagem" />
-      </div>
-
-      <div class="formItems">
-        <label>Nome</label>
-        <input type="text" formControlName="nome" required />
-      </div>
-
-      <div class="formItems">
-        <label>Descrição</label>
-        <input type="text" formControlName="descricao" required />
-      </div>
-
-      <div class="formItems">
-        <label>Estoque</label>
-        <input type="number" formControlName="estoque" />
-      </div>
-
-      <div class="formItems">
-        <label>Preço</label>
-        <input type="number" formControlName="preco" />
-      </div>
-
-      <div class="statusItem">
-        <label>Status</label>
-        <input type="radio" formControlName="status" />
-      </div>
-
-      <button type="submit" class="confirmFormButton">Confirmar</button>
-    </form>
-    <button class="cancelFormButton" (click)="handleModalUp()">Cancelar</button>
-  </div>
+  <app-modal-add-produto (CloseModal)="onCloseModal()" *ngIf="addModalUp">
+  </app-modal-add-produto>
 </div>
