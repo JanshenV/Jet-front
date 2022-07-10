@@ -1,10 +1,10 @@
 .tableContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 20px;
     min-height: 100vh;
     width: 80vw;
+    border-radius: 10px;
 }
 
 .addProdutoButton {
@@ -19,6 +19,7 @@
 .addProdutoButton:hover {
     background: white;
     color: rgb(47, 197, 47);
+    font-weight: bolder;
 }
 
 .addProdutoContainer {
