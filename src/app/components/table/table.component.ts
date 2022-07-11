@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 import { Produto } from 'src/app/Produtos';
 
@@ -28,6 +27,10 @@ export class TableComponent implements OnInit {
 
   onCloseModal() {
     this.addModalUp = false;
+  }
+
+  onEmitProdutosList(produtos: Produto[]): void {
+    this.produtos = produtos;
   }
 
   getProdutos(): void {

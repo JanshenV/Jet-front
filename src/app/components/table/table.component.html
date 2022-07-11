@@ -5,6 +5,7 @@
 
   <div *ngIf="produtos.length; else noProdutos">
     <app-table-item
+      (EmitProdutosList)="onEmitProdutosList($event)"
       *ngFor="let produto of produtos"
       [produto]="produto"
       [produtos]="produtos"
