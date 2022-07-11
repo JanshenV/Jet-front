@@ -1,4 +1,4 @@
-<div class="table-item" (click)="handleShowModal()">
+<div class="table-item" (click)="handleShowModalInfo()">
   <img class="mainImg" src="{{ produto.imagem }}" alt="imagem do produto" />
 
   <div class="produtoInfo">
@@ -43,17 +43,32 @@
   </ng-template>
 
   <button
-    class="removeProduto"
+    class="removeProduto button"
     (click)="$event.stopPropagation()"
     (click)="handleDelete(produto.id)"
   >
     Remover Produto
   </button>
+
+  <button
+    class="editProduto button"
+    (click)="$event.stopPropagation()"
+    (click)="handleShowModalEdit()"
+  >
+    Editar Produto
+  </button>
 </div>
 
 <app-modal-show-produto
-  (CloseModal)="onCloseModal()"
+  (CloseModalInfo)="onCloseModalInfo()"
   [produto]="produto"
-  *ngIf="showModal"
+  *ngIf="showModalInfo"
 >
 </app-modal-show-produto>
+
+<app-modal-edit-produto
+  (CloseModalEdit)="onCloseModalEdit()"
+  [produto]="produto"
+  [produtos]="produtos"
+  *ngIf="showModalEdit"
+></app-modal-edit-produto>

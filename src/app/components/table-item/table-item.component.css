@@ -35,16 +35,29 @@
     cursor: pointer;
 }
 
-.removeProduto {
-    background: red;
+.button {
     height: 36px;
     width: 100px;
     border-radius: 16px;
-    color: white;
     cursor: pointer;
+}
+
+.removeProduto {
+    background: red;
+    color: white;
 }
 
 .removeProduto:hover {
     color: red;
     background: white;
+}
+
+.editProduto {
+    background: rgb(236, 233, 34);
+    color: black;
+}
+
+.editProduto:hover {
+    background: rgb(247, 247, 243);
+    color: rgb(87, 74, 5);
 }

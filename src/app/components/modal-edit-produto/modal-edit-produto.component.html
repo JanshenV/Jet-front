@@ -1,0 +1,52 @@
+<div class="editProdutoContainer">
+  <div class="editProdutoInnerContainer">
+    <form
+      (ngSubmit)="handleSubmit()"
+      [formGroup]="produtoForm"
+      #formDir="ngForm"
+      ng-submit="$event.preventDefault()"
+    >
+      <div class="formItem">
+        <label>Url</label>
+        <input type="url" formControlName="imagem" />
+      </div>
+
+      <div class="formItem">
+        <label for="name">Nome</label>
+        <input id="name" type="text" formControlName="nome" required />
+      </div>
+
+      <div class="formItem">
+        <label for="#textArea">Descrição</label>
+        <textarea
+          formControlName="descricao"
+          required
+          maxlength="2000"
+          id="textArea"
+          cols="10"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <div class="formItem">
+        <label for="#stock">Estoque</label>
+        <input id="stock" type="number" formControlName="estoque" />
+      </div>
+
+      <div class="formItem">
+        <label for="#price">Preço</label>
+        <input id="price" type="number" formControlName="preco" />
+      </div>
+
+      <div class="formItem">
+        <label>Visível</label>
+        <input type="checkbox" formControlName="status" />
+      </div>
+
+      <div class="modalButtons">
+        <button type="submit">Confirmar</button>
+        <button type="button" (click)="handleCloseModalEdit()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -12,6 +12,7 @@ import { TableComponent } from './components/table/table.component';
 import { TableItemComponent } from './components/table-item/table-item.component';
 import { ModalAddProdutoComponent } from './components/modal-add-produto/modal-add-produto.component';
 import { ModalShowProdutoComponent } from './components/modal-show-produto/modal-show-produto.component';
+import { ModalEditProdutoComponent } from './components/modal-edit-produto/modal-edit-produto.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ModalShowProdutoComponent } from './components/modal-show-produto/modal
     TableComponent,
     TableItemComponent,
     ModalAddProdutoComponent,
-    ModalShowProdutoComponent
+    ModalShowProdutoComponent,
+    ModalEditProdutoComponent
   ],
   imports: [
     BrowserModule,

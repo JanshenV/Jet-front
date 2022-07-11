@@ -8,7 +8,7 @@ import { Produto } from 'src/app/Produtos';
   styleUrls: ['./modal-show-produto.component.css']
 })
 export class ModalShowProdutoComponent implements OnInit {
-  @Output() CloseModal: EventEmitter<any> = new EventEmitter<{}>();
+  @Output() CloseModalInfo: EventEmitter<any> = new EventEmitter<{}>();
 
   @Input() produto!: Produto;
 
@@ -19,6 +19,6 @@ export class ModalShowProdutoComponent implements OnInit {
 
 
   handleCloseModal(): void{
-    this.CloseModal.emit();
+    this.CloseModalInfo.emit();
   }
 }

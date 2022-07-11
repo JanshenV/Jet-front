@@ -28,6 +28,10 @@ export class ApiService {
     return this.http.post<FormData>(`${this.baseApiUrl}produtos`, formData);
   }
 
+  editProduto(formData: FormData, id: number): Observable<FormData> {
+    return this.http.put<FormData>(`${this.baseApiUrl}produtos/${id}`, formData);
+  }
+
   deleteOne(id: number) {
     return this.http.delete<Produto>(`${this.baseApiUrl}produtos/${id}`);
   }

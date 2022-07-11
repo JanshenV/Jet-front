@@ -17,7 +17,8 @@ export class TableItemComponent implements OnInit {
     produtos: Produto[]
   }>();
 
-  showModal = false;
+  showModalInfo = false;
+  showModalEdit = false;
   propertiesNotToBeShown: string[] = ['imagem', 'status', 'id'];
 
   constructor(private apiService: ApiService) {
@@ -26,12 +27,20 @@ export class TableItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleShowModal(): void {
-    this.showModal = true;
+  handleShowModalInfo(): void {
+    this.showModalInfo = true;
   }
 
-  onCloseModal(): void {
-    this.showModal = false;
+  handleShowModalEdit(): void{
+    this.showModalEdit = true;
+  }
+
+  onCloseModalInfo(): void {
+    this.showModalInfo = false;
+  }
+
+  onCloseModalEdit(): void{
+    this.showModalEdit = false;
   }
 
   handleDelete(id: number): void {
