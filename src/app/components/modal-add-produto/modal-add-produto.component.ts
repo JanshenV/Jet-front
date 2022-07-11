@@ -30,8 +30,9 @@ export class ModalAddProdutoComponent implements OnInit {
     if (this.produtoForm.invalid) {
       return;
     };
-    await this.apiService.createProduto(this.produtoForm.value).subscribe();
+     await this.apiService.createProduto(this.produtoForm.value).subscribe();
     this.CloseModal.emit();
+
   };
 
   handleCloseModal(): void{

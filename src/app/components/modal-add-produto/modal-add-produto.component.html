@@ -6,40 +6,62 @@
       #formDir="ngForm"
       ng-submit="$event.preventDefault()"
     >
-      <div class="formItems">
-        <label>Url da Imagem</label>
-        <input type="url" formControlName="imagem" />
+      <div class="formItem">
+        <label>Url</label>
+        <input
+          placeholder="Url da imagem do produto"
+          type="url"
+          formControlName="imagem"
+        />
       </div>
 
-      <div class="formItems">
-        <label>Nome</label>
-        <input type="text" formControlName="nome" required />
+      <div class="formItem">
+        <label for="name">Nome</label>
+        <input
+          id="name"
+          placeholder="Nome do produto"
+          type="text"
+          formControlName="nome"
+          required
+        />
       </div>
 
-      <div class="formItems">
-        <label>Descrição</label>
-        <input type="text" formControlName="descricao" required />
+      <div class="formItem">
+        <label for="#textArea">Descrição</label>
+        <textarea
+          formControlName="descricao"
+          placeholder="Descreva o produto"
+          required
+          id="textArea"
+          cols="10"
+          rows="3"
+        ></textarea>
       </div>
 
-      <div class="formItems">
-        <label>Estoque</label>
-        <input type="number" formControlName="estoque" />
+      <div class="formItem">
+        <label for="#stock">Estoque</label>
+        <input
+          id="stock"
+          placeholder="Estoque do produto"
+          type="number"
+          formControlName="estoque"
+        />
       </div>
 
-      <div class="formItems">
-        <label>Preço</label>
-        <input type="number" formControlName="preco" />
+      <div class="formItem">
+        <label for="#price">Preço</label>
+        <input id="price" type="number" formControlName="preco" />
       </div>
 
-      <div class="statusItem">
-        <label>Status</label>
+      <div class="formItem">
+        <label>Visível</label>
         <input type="checkbox" formControlName="status" />
       </div>
 
-      <button type="submit" class="confirmFormButton">Confirmar</button>
+      <div class="modalButtons">
+        <button type="submit">Confirmar</button>
+        <button type="button" (click)="handleCloseModal()">Cancelar</button>
+      </div>
     </form>
-    <button class="cancelFormButton" (click)="handleCloseModal()">
-      Cancelar
-    </button>
   </div>
 </div>
