@@ -1,13 +1,31 @@
 <div class="table-item" (click)="handleShowModal()">
   <img class="mainImg" src="{{ produto.imagem }}" alt="imagem do produto" />
 
-  <div class="nameAndDescription">
-    <span> Produto: {{ produto.nome }} </span>
-    <span class="description"> Descrição: {{ produto.descricao }} </span>
+  <div class="produtoInfo">
+    <h3>Nome:</h3>
+    <span>
+      {{ produto.nome | titlecase }}
+    </span>
   </div>
 
-  <span> Preço: R$ {{ produto.preco }} </span>
-  <span> Estoque: {{ produto.estoque }} </span>
+  <div class="produtoInfo">
+    <h3>Descrição:</h3>
+    <span>
+      {{ produto.descricao | titlecase }}
+    </span>
+  </div>
+
+  <div class="produtoInfo">
+    <h3>Preço:</h3>
+    <span>
+      {{ produto.preco / 100 | currency }}
+    </span>
+  </div>
+
+  <div class="produtoInfo">
+    <h3>Estoque:</h3>
+    <span> {{ produto.estoque | number }} Un. </span>
+  </div>
 
   <img
     class="eye"
@@ -31,10 +49,11 @@
   >
     Remover Produto
   </button>
-  <app-modal-show-produto
-    (CloseModal)="onCloseModal()"
-    [produto]="produto"
-    *ngIf="showModal"
-  >
-  </app-modal-show-produto>
 </div>
+
+<app-modal-show-produto
+  (CloseModal)="onCloseModal()"
+  [produto]="produto"
+  *ngIf="showModal"
+>
+</app-modal-show-produto>

@@ -12,8 +12,17 @@
     height: 120px;
 }
 
-.table-item span {
+.produtoInfo {
+    max-width: 20%;
+    max-height: 10%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.produtoInfo span {
     font-weight: 600;
+    color: rgb(112, 120, 128);
 }
 
 .eye {
@@ -21,25 +30,21 @@
     height: 20px;
 }
 
-.nameAndDescription {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-}
-
-.nameAndDescription span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 .table-item:hover {
     background: rgb(219, 211, 211);
     cursor: pointer;
 }
 
-.description {
-    font-weight: 600;
-    color: rgb(112, 120, 128);
-    overflow: hidden;
-    text-overflow: ellipsis;
+.removeProduto {
+    background: red;
+    height: 36px;
+    width: 100px;
+    border-radius: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.removeProduto:hover {
+    color: red;
+    background: white;
 }

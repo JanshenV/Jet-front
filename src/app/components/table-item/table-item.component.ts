@@ -18,7 +18,7 @@ export class TableItemComponent implements OnInit {
   }>();
 
   showModal = false;
-
+  propertiesNotToBeShown: string[] = ['imagem', 'status', 'id'];
 
   constructor(private apiService: ApiService) {
   }
@@ -27,11 +27,11 @@ export class TableItemComponent implements OnInit {
   }
 
   handleShowModal(): void {
-    this.showModal = !this.showModal;
+    this.showModal = true;
   }
 
   onCloseModal(): void {
-    this.handleShowModal();
+    this.showModal = false;
   }
 
   handleDelete(id: number): void {
