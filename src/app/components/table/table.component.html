@@ -25,6 +25,10 @@
     </div>
   </ng-template>
 
-  <app-modal-add-produto (CloseModal)="onCloseModal()" *ngIf="addModalUp">
+  <app-modal-add-produto
+    (CloseModal)="onCloseModal()"
+    *ngIf="addModalUp"
+    [produtos]="produtos"
+  >
   </app-modal-add-produto>
 </div>

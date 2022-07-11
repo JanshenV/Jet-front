@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
+import { Produto } from 'src/app/Produtos';
 
 @Component({
   selector: 'app-modal-add-produto',
@@ -9,8 +10,11 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class ModalAddProdutoComponent implements OnInit {
   @Output() CloseModal: EventEmitter<any> = new EventEmitter<{}>();
+  
+  @Input() produtos!: Produto[];
 
   produtoForm!: FormGroup;
+
 
   constructor(private apiService: ApiService) {
   }
@@ -31,6 +35,7 @@ export class ModalAddProdutoComponent implements OnInit {
       return;
     };
      await this.apiService.createProduto(this.produtoForm.value).subscribe();
+     this.produtos.push(this.produtoForm.value);
     this.CloseModal.emit();
 
   };

@@ -12,7 +12,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class TableComponent implements OnInit {
   produtos: Produto[] = [];
-  addModalUp: boolean = true;
+  addModalUp: boolean = false;
 
   constructor(private apiService: ApiService) {
     this.getProdutos();
