@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TableComponent } from './components/table/table.component';
 import { TableItemComponent } from './components/table-item/table-item.component';
 import { ModalAddProdutoComponent } from './components/modal-add-produto/modal-add-produto.component';
+import { ModalShowProdutoComponent } from './components/modal-show-produto/modal-show-produto.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ModalAddProdutoComponent } from './components/modal-add-produto/modal-a
     HeaderComponent,
     TableComponent,
     TableItemComponent,
-    ModalAddProdutoComponent
+    ModalAddProdutoComponent,
+    ModalShowProdutoComponent
   ],
   imports: [
     BrowserModule,

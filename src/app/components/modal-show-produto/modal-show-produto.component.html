@@ -1,0 +1,35 @@
+<div class="modalContainer">
+  <img
+    class="closeButton"
+    (click)="handleCloseModal()"
+    src="../../../assets/button.png"
+    alt="closeButton"
+  />
+  <div class="modalInnerContainer">
+    <h1>{{ produto.nome | titlecase }}</h1>
+    <img src="{{ produto.imagem }}" alt="imagem do produto" />
+
+    <div class="produtoInfo">
+      <h3>Preço:</h3>
+      <span>{{ produto.preco / 100 | currency }}</span>
+    </div>
+
+    <div class="produtoInfo">
+      <h3>Estoque:</h3>
+      <span>{{ produto.estoque | number }} Un.</span>
+    </div>
+
+    <div class="produtoInfo">
+      <h3>Status:</h3>
+      <span *ngIf="produto.status; else notVisible"> Visível </span>
+      <ng-template #notVisible>
+        <span>Não visível</span>
+      </ng-template>
+    </div>
+
+    <div class="produtoInfo">
+      <h3>Descrição:</h3>
+      <span>{{ produto.descricao | titlecase }}</span>
+    </div>
+  </div>
+</div>

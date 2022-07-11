@@ -29,8 +29,9 @@ export class TableComponent implements OnInit {
     this.addModalUp = false;
   }
 
-  onEmitProdutosList(produtos: Produto[]): void {
-    this.produtos = produtos;
+  onEmitProdutosList(Produtos: Produto[]): void {
+    this.produtos = Produtos;
+  
   }
 
   getProdutos(): void {

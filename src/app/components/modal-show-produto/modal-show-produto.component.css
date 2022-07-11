@@ -1,0 +1,62 @@
+.modalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.modalInnerContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    border-radius: 20px;
+    z-index: 50;
+    width: 40%;
+    height: 90vh;
+}
+
+.closeButton {
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.modalInnerContainer img {
+    width: 300px;
+    height: 200px;
+}
+
+.produtoInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: flex-start;
+    border-bottom: 5px solid black;
+}
+
+.produtoInfo span {
+    color: grey;
+    padding-left: 20px;
+}
+
+.produtoInfo:nth-child(6) {
+    flex-direction: column;
+    justify-content: baseline;
+    max-width: 100%;
+    max-height: 30%;
+    border-bottom: none;
+}
+
+.produtoInfo:nth-child(6) span {
+    overflow-x: scroll;
+    padding-left: 0;
+}

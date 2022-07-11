@@ -30,10 +30,14 @@ export class TableItemComponent implements OnInit {
     this.showModal = !this.showModal;
   }
 
+  onCloseModal(): void {
+    this.handleShowModal();
+  }
+
   handleDelete(id: number): void {
     this.apiService.deleteOne(id).subscribe();
     this.produtos = this.produtos.filter((produto) => this.produto.id !== produto.id);
-    this.EmitProdutosList.emit({ produtos: this.produtos });
+    this.EmitProdutosList.emit(this.produtos);
   }
 
 }

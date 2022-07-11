@@ -31,27 +31,10 @@
   >
     Remover Produto
   </button>
-</div>
-
-<!--  -->
-<div *ngIf="showModal" class="modalContainer">
-  <img
-    class="closeButton"
-    (click)="handleShowModal()"
-    src="../../../assets/button.png"
-    alt="closeButton"
-  />
-  <div class="modalInnerContainer">
-    <img src="{{ produto.imagem }}" alt="imagem do produto" />
-
-    <div class="produtoInfo">
-      <span> Produto: {{ produto.nome }} </span>
-      <span class="modalDescription"> Descrição: {{ produto.descricao }} </span>
-
-      <span> Preço: {{ produto.preco }} </span>
-      <span> Estoque: {{ produto.estoque }} </span>
-      <span *ngIf="produto.status"> Status: Vísivel </span>
-      <span *ngIf="!produto.status"> Status: Não vísivel </span>
-    </div>
-  </div>
+  <app-modal-show-produto
+    (CloseModal)="onCloseModal()"
+    [produto]="produto"
+    *ngIf="showModal"
+  >
+  </app-modal-show-produto>
 </div>
